@@ -74,7 +74,7 @@ gulp.task("build", ['html'], function () {
 
 // dev tools
 gulp.task('watchFiles', function () {
-    gulp.watch(options.src + 'scss/**/*.scss', ['compileSass']);
+    gulp.watch(options.src + '/scss/**/*.scss', ['compileSass']);
 });
 
 gulp.task('serve', ['watchFiles']);
