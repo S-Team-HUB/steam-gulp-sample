@@ -1,0 +1,37 @@
+{
+  "name": "steam-gulp-sample",
+  "version": "1.0.0",
+  "description": "S-Team first gulp sample",
+  "main": "gulp",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hdngr/treehouse-gulp-course.git"
+  },
+  "author": "Mahmoud SALMI",
+  "license": "ISC",
+  "homepage": "https://github.com/hdngr/treehouse-gulp-course",
+  "devDependencies": {
+    "del": "^1.2.0",
+    "gulp": "^3.8.11",
+    "gulp-cachebust": "0.0.6",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-debug": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-useref": "^3.1.2",
+    "lazypipe": "^1.0.1"
+  },
+  "dependencies": {
+    "gulp-cachebust": "^0.0.6",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-debug": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-useref": "^3.1.2",
+    "lazypipe": "^1.0.1"
+  }
+}
