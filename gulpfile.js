@@ -32,7 +32,18 @@ gulp.task('cleanDist', function () {
 gulp.task('clean', ['cleanDist', 'cleanSass']);
 
 // styles
-gulp.task('compileSass', ['cleanSass'], function () {
+gulp.task('compileSassDev', ['cleanSass'], function () {
+    return gulp.src(options.src + "/scss/application.scss")
+        .pipe(maps.init())
+        .pipe(rename('app.min.css'))
+        .pipe(sass())
+        .pipe(minCss())
+        .pipe(maps.write('./'))
+        .pipe(gulp.dest(options.src + '/css'));
+});
+
+// styles
+gulp.task('compileSass', ['compileSassDev'], function () {
     return gulp.src(options.src + "/scss/application.scss")
         .pipe(maps.init())
         .pipe(rename('app.min.css'))
@@ -40,7 +51,7 @@ gulp.task('compileSass', ['cleanSass'], function () {
         .pipe(sass())
         .pipe(minCss())
         .pipe(maps.write('./'))
-        .pipe(gulp.dest(options.src + '/css'));
+        .pipe(gulp.dest(options.dist + '/css'));
 });
 
 // clean and copy static
@@ -74,7 +85,7 @@ gulp.task("build", ['html'], function () {
 
 // dev tools
 gulp.task('watchFiles', function () {
-    gulp.watch(options.src + '/scss/**/*.scss', ['compileSass']);
+    gulp.watch(options.src + '/scss/**/*.scss', ['compileSassDev']);
 });
 
 gulp.task('serve', ['watchFiles']);
